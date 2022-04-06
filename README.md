@@ -1,10 +1,8 @@
-#
+# Foolproof Interview Exercise
 
 ## Overview
 
-After looking at the mock api, I decided the most likely application of the data was in a building maintence capacity, as having up to date information on temperature and carbon dioxide levels across an office block would be important to OHSHA compliance. This also has the secondary application of monitoring which side of the office is complaining about being too hot as the other side simultaneously complains about being too cold, as all office workers (myself included) must choose a side in this eternal struggle*.
-
-*I'm always too cold.
+After looking at the mock api, I decided the most likely application of the data was in a building maintence capacity, as having up to date information on temperature and carbon dioxide levels across an office block would be an important part of health and safety compliance. This also has the secondary application of monitoring which side of the office is complaining about being too hot as the other side simultaneously complains about being too cold, as all office workers (myself included) must choose a side in this eternal struggle*.
 
 ## Goal & Planning
 
@@ -40,4 +38,15 @@ I decided to mostly use my own markup, as I had a clear idea of to create the wi
  I relied heavily on flexbox for my layout, as I like the way it simplifies building grids in CSS. When I'd approximatedthe wireframe and made it fit comfortably and clearly on a tablet, I applied a fairly neutral color scheme, which from experience I feel iss appropriate to the facilities management industry.
 
  I also added a phone view, arranging the floor information into a smaller space (opting for flex columns over flex rows), before finally adding some box shadowing to make sure that the information was clear on all devices.
+
+ ### Future Additions
+I had intiallY wanted to have the app update in real time, and attempted this in jQuery. However this gavew me errors which I was unable to solve in time. 
+
+A rough solution to this would be to have a page reload on a setTimeout, but I didn't like how intensive that was.
+
+I looked into using jQuery to target a certain element, an refresh that information every 30 seconds, but the solutions I tried for this ran into XML parsing errors, which I was unable to find solutions for. With some additional time I'm sure I could have implemented this feature.
+
+### Misc
+
+*I'm always on the too cold side btw.
 
