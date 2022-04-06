@@ -40,7 +40,7 @@ I decided to mostly use my own markup, as I had a clear idea of to create the wi
  I also added a phone view, arranging the floor information into a smaller space (opting for flex columns over flex rows), before finally adding some box shadowing to make sure that the information was clear on all devices.
 
  ### Future Additions
-I had intiallY wanted to have the app update in real time, and attempted this in jQuery. However this gavew me errors which I was unable to solve in time. 
+I had intially wanted to have the app update in real time, and attempted this in jQuery. However this gavew me errors which I was unable to solve in time. 
 
 A rough solution to this would be to have a page reload on a setTimeout, but I didn't like how intensive that was.
 
