@@ -6,7 +6,7 @@ After looking at the mock api, I decided the most likely application of the data
 
 ## Goal & Planning
 
-First I decided that I would primarily design  for tablet and mobile viewports, as from my experience, building managers tend not to spend alot of time at a desk and are often moving about between floors.  
+I decided that I would primarily design for tablet and mobile viewports, as from my experience, building managers tend not to spend alot of time at a desk and are often moving about between floors.  
 
 As this is information that the user would need at a glance, I decided that this would need to fit comfortably onto a tablet, be arranged in a grid format and have clear visual status indicators. The intended viewport size is 810 x 1080 (iPad size) and 428 x 926 (larger iPhones).
 
