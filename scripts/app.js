@@ -103,6 +103,16 @@ function getData() {
 
 async function buildFloors(){
   const result = await getData()
+
+  result.sort(function(a,b){
+    if (a.type < b.type) {
+      return -1
+    }
+    if (a.type > b.type){
+      return 1
+    }
+    return 0
+  })
   
 
   const floorThreeArray = result.filter(data => data.location === 'Floor 3')
@@ -110,7 +120,7 @@ async function buildFloors(){
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-      <h5>${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -126,7 +136,7 @@ async function buildFloors(){
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-      <h5>${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -141,7 +151,7 @@ async function buildFloors(){
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-        <h5>${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+        <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -155,7 +165,7 @@ async function buildFloors(){
     .map(data => {
       return `<div class = "floorData">
       <div class = "dataContainer">
-      <h5>${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -171,8 +181,16 @@ async function buildFloors(){
   warehouse.innerHTML = warehouseArray.join('')
 }
 
+// function refreshData(){
+//   document.querySelectorAll('#data').load(window.location.href + '#data')
+ 
+// }
+
+
+
 
 buildFloors()
+setInterval(refreshData(), 100)
 
 
 
