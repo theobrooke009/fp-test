@@ -91,6 +91,8 @@ const mockData = [
   }
 ]
 
+
+
 function getData() {
   return new Promise((resolve) => {
     setTimeout(function () {
@@ -101,6 +103,7 @@ function getData() {
 
 async function buildFloors(){
   const result = await getData()
+  
 
   const floorThreeArray = result.filter(data => data.location === 'Floor 3')
     .map(data => {
@@ -116,6 +119,7 @@ async function buildFloors(){
 
 </div>`
     })
+    
 
   const floorOneArray = result.filter(data => data.location === 'Floor 1')
     .map(data => {
@@ -160,7 +164,7 @@ async function buildFloors(){
     
     </div>`
     })
-
+  
   floorThree.innerHTML = floorThreeArray.join('')
   floorOne.innerHTML = floorOneArray.join('')
   basement.innerHTML = basementArray.join('')
