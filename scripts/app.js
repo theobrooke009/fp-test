@@ -1,4 +1,5 @@
 
+
 const floorThree = document.querySelector('.floorThreeData')
 const floorOne = document.querySelector('.floorOneData')
 const basement = document.querySelector('.basementData')
@@ -91,8 +92,6 @@ const mockData = [
   }
 ]
 
-
-
 function getData() {
   return new Promise((resolve) => {
     setTimeout(function () {
@@ -101,9 +100,11 @@ function getData() {
   })
 }
 
-async function buildFloors(){
+async function buildTable(){
+
   const result = await getData()
 
+  //sorting the data by type here, to avoid doing it in every map & filter
   result.sort(function(a,b){
     if (a.type < b.type) {
       return -1
@@ -114,13 +115,13 @@ async function buildFloors(){
     return 0
   })
   
-
+  //data arranged by floor as this fit my idea best
   const floorThreeArray = result.filter(data => data.location === 'Floor 3')
     .map(data => {
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'temp' ?  '&#176 C' : data.type === 'co2' ? 'ppm' : ''}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -136,7 +137,7 @@ async function buildFloors(){
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'temp' ?  '&#176 C' : data.type === 'co2' ? 'ppm' : ''}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -151,7 +152,7 @@ async function buildFloors(){
       return `<div class = "floorData">
 
       <div class = "dataContainer">
-        <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'temp' ?  '&#176 C' : data.type === 'co2' ? 'ppm' : ''}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -165,7 +166,7 @@ async function buildFloors(){
     .map(data => {
       return `<div class = "floorData">
       <div class = "dataContainer">
-      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'devices' ?  '' : data.type === 'co2' ? 'ppm' : '&#176 C'}</h5>
+      <h5 id="data">${data.type[0].toUpperCase() + data.type.substring(1)}: ${data.value} ${data.type === 'temp' ?  '&#176 C' : data.type === 'co2' ? 'ppm' : ''}</h5>
       </div>
 
       <div class = "dataContainer">
@@ -174,23 +175,25 @@ async function buildFloors(){
     
     </div>`
     })
-  
+
   floorThree.innerHTML = floorThreeArray.join('')
   floorOne.innerHTML = floorOneArray.join('')
   basement.innerHTML = basementArray.join('')
   warehouse.innerHTML = warehouseArray.join('')
 }
 
-// function refreshData(){
-//   document.querySelectorAll('#data').load(window.location.href + '#data')
- 
-// }
+// setTimeout(() => {
+//   $('.dataContainer').load(location.href + ' .dataContainer>*','')
+// }, 5000)
+
+buildTable()
 
 
 
 
-buildFloors()
-setInterval(refreshData(), 100)
+
+
+
 
 
 
