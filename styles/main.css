@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Saira+Condensed:wght@300;600&display=swap');
+
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 70px 0;
+  font-family: 'Saira Condensed', sans-serif;
+}
+h2{
+  color:white;
+  background-color: #384650;
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+h5{
+  margin: 5px;
+  font-size: 20px;
+  color: white;
+  background-color: #384650;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.floorThreeData, .floorOneData, .basementData, .warehouseData{
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  background-color: #6A7A79;
+  background-repeat: repeat;
+
+
+}
+
+.floor{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 25px;
+
+
+}
+
+.floorName{
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://jobacle.com/wp-content/uploads/2016/09/shutterstock_347975279.jpg');
+  background-size:100%;
+  background-color: rgba(0,0,0,.7);
+
+}
+
+.basement{
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://modernofficesystems.com/wp-content/uploads/Safilo-pic-1.jpg');
+  background-size:100%;
+  background-color: rgba(0,0,0,.7);
+
+}
+
+.warehouse{
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://www.obwiik.com/wp-content/uploads/2020/02/obwiik-buildings-warehouse-building-2-768x432.jpg');
+  background-size:100%;
+  background-color: rgba(0,0,0,.7);
+
+}
+
+.floorData{
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+  justify-content: center;
+
+}
+
+.dataContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.status{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.online{
+  background-color: #008450;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.offline{
+  background-color: #B81D13;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
